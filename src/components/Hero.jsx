@@ -18,11 +18,12 @@ const Hero = () => {
         {/* Headline and subtext */}
         <div>
           <h1 className={`${Styles.heroHeadText} text-white`}>
-            Hi, I'm <span className="text-[#915EFF]">Jorge</span>
+            Hi, I'm <span className="text-[#915EFF]">Milan </span>
           </h1>
           <p className={`${Styles.heroSubText} mt-2 text-white-100`}>
-            I develop 3D visuals, virtual <br className="sm:block hidden" />
-            assistants and web applications
+            I develop 3D visuals,cloud architecture{" "}
+            <br className="sm:block hidden" />
+            app and web applications
           </p>
         </div>
       </div>

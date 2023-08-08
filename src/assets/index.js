@@ -1,4 +1,4 @@
-import logo from "./logo.svg";
+import logo from "./logo-500.png";
 import backend from "./backend.png";
 import creator from "./creator.png";
 import mobile from "./mobile.png";
@@ -21,9 +21,10 @@ import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 import expressjs from "./tech/expressjs.png";
 import python from "./tech/python.png";
-import jest from "./tech/jest.png"
+import jest from "./tech/jest.png";
 
 import shopify from "./company/shopify.png";
+import TST from "./company/logo-TST.png";
 
 import codecrate from "./codecrate.png";
 import progrest from "./progrest.png";
@@ -32,12 +33,12 @@ import expressnotes from "./expressnotes.png";
 import backofshop from "./backofshop.png";
 import sqltrack from "./SQLTrakR.png";
 import ecomdash from "./ecomdash.png";
-import dalle from "./dall.png"
-import spice from "./spice.png"
-import finance from "./finance.png"
-import article from "./article.png"
-import gptalk from "./gptalk.png"
-import promptpal from "./promptpal.png"
+import dalle from "./dall.png";
+import spice from "./spice.png";
+import finance from "./finance.png";
+import article from "./article.png";
+import gptalk from "./gptalk.png";
+import promptpal from "./promptpal.png";
 
 export {
   logo,
@@ -61,6 +62,7 @@ export {
   typescript,
   threejs,
   shopify,
+  TST,
   expressjs,
   python,
   jest,
@@ -76,5 +78,5 @@ export {
   finance,
   article,
   gptalk,
-  promptpal
+  promptpal,
 };

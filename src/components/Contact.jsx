@@ -1,7 +1,7 @@
 // Import necessary dependencies and components
 import { useState, useRef } from "react";
 import { motion } from "framer-motion";
-import emailjs from "@emailjs/browser";
+// import emailjs from "@emailjs/browser";
 
 import { Styles } from "../styles";
 import { SectionWrapper } from "../hoc";
@@ -36,23 +36,20 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
-
-    // Use emailjs library to send email
-    emailjs
-      .send(
-        "service_88ac7s1",
-        "template_r0q25ev",
-        {
-          from_name: form.name,
-          to_name: "Jorge",
-          form_email: form.email,
-          to_email: "jbxamora@icloud.com",
-          message: form.message,
-        },
-        "x1z0XVxJpE0k6XVbU"
-      )
-      .then(
-        () => {
+    fetch("https://conatct-575b9-default-rtdb.firebaseio.com/contact2.json", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        name: form.name,
+        email: form.email,
+        message: form.message,
+      }),
+    })
+      .then((response) => {
+        console.log(response);
+        if (response.status === 200) {
           setLoading(false);
           // Show success message and reset form state
           alert("Thank you. I will get back to you within 5 business days!");
@@ -61,13 +58,48 @@ const Contact = () => {
             email: "",
             message: "",
           });
-        },
-        (error) => {
-          setLoading(false);
-          // Show error message
-          alert("Something went wrong.");
+        } else if (response.statusText !== "OK") {
+          return response.json();
         }
-      );
+      })
+
+      .catch((error) => {
+        setLoading(false);
+        // Show error message
+        alert("Something went wrong.");
+      });
+
+    // Use emailjs library to send email
+    // emailjs
+    //   .send(
+    //     "service_88ac7s1",
+    //     "template_r0q25ev",
+    //     {
+    //       from_name: form.name,
+    //       to_name: "Jorge",
+    //       form_email: form.email,
+    //       to_email: "jbxamora@icloud.com",
+    //       message: form.message,
+    //     },
+    //     "x1z0XVxJpE0k6XVbU"
+    //   )
+    //   .then(
+    //     () => {
+    //       setLoading(false);
+    //       // Show success message and reset form state
+    //       alert("Thank you. I will get back to you within 5 business days!");
+    //       setForm({
+    //         name: "",
+    //         email: "",
+    //         message: "",
+    //       });
+    //     },
+    //     (error) => {
+    //       setLoading(false);
+    //       // Show error message
+    //       alert("Something went wrong.");
+    //     }
+    //   );
   };
 
   return (
@@ -135,21 +167,21 @@ const Contact = () => {
               {loading ? "Sending..." : "Send"}
             </button>
             <a
-              href="https://github.com/jbxamora"
+              href="https://github.com/MilanGolakiyaTST"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-tertiary mt-4 py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl mr-4 hidden sm:inline-block"
             >
               GitHub
             </a>
-            <a
+            {/* <a
               href="https://gist.github.com/jbxamora"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-tertiary mt-4 py-3 px-8 outline-none w-fit text-white font-bold shadow-md shadow-primary rounded-xl hidden sm:inline-block"
             >
               Blog
-            </a>
+            </a> */}
           </div>
         </form>
       </motion.div>

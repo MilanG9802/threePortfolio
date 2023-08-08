@@ -12,7 +12,7 @@ const Navbar = () => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  
+
   // Add event listener for scroll behavior
   useEffect(() => {
     const handleScroll = () => {
@@ -23,15 +23,15 @@ const Navbar = () => {
         setScrolled(false);
       }
     };
-    
+
     window.addEventListener("scroll", handleScroll);
-    
+
     // Clean up event listener on component unmount
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   // Handle Resume Download
-  
+
   // Define toggleMenu function to handle menu toggle
   return (
     <nav
@@ -50,10 +50,15 @@ const Navbar = () => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-9 h-9 object-contain" />
+          <img
+            src={logo}
+            alt="logo"
+            className="w-9 h-9 object-contain"
+            style={{}}
+          />
           <p className="text-white text-[18px] font-bold cursor-pointer flex ">
-            Jorge &nbsp;
-            <span className="sm:block hidden"> Zamora</span>
+            Milan &nbsp;
+            <span className="sm:block hidden"> Golakiya</span>
           </p>
         </Link>
 

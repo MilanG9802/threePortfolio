@@ -58,14 +58,14 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am a junior developer with experience in the MERN stack. I started
-        coding chatbots using Python and found my way into a coding bootcamp
-        where I learned Javascript, React, Node.js, Express, and MongoDB. After
-        completing the Full Stack Flex program by UC Berkeley, I gained hands-on
-        experience building full-stack web applications, deploying them to the
-        cloud, and working with various APIs. I'm passionate about creating
-        scalable and user-friendly software and always eager to learn new
-        technologies."
+        Experienced web developer skilled in Python, Java, C, C#, and
+        JavaScript, with a focus on front-end development. Proficient in popular
+        frameworks like React, Next, and Gatsby, along with UI libraries
+        including Antd, Material UI, and Bootstrap. Profound understanding of
+        TypeScript and Reactstrap. Accomplished in 3D modeling using Three.js
+        and related libraries. Graduated with distinction from Sarvajanik
+        College of Engineering. Adept at turning complex ideas into seamless web
+        experiences.
       </motion.p>
 
       {/* Container for service cards */}
